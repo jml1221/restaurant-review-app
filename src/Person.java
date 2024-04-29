@@ -1,3 +1,4 @@
 
-public class Person {
+public interface Person {
+
 }
