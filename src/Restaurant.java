@@ -5,7 +5,7 @@ public class Restaurant {
     private String website;
     private Category category;
     private int rating;
-    // private ReviewList reviewList;
+    private ReviewList reviewList;
 
     public Restaurant(String name) {
         this.name = name;
@@ -35,11 +35,9 @@ public class Restaurant {
         return rating;
     }
 
-    /*
     public ReviewList getReviewList() {
         return reviewList;
     }
-     */
 
     public void setName(String name) {
         this.name = name;

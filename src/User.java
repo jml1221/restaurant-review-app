@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class User implements Person{
+public class User implements Person {
     private int id;
     private String userName;
 

@@ -1,4 +1,3 @@
-
 public class Admin implements Person {
 
     public Admin() {
@@ -7,7 +6,7 @@ public class Admin implements Person {
 
     public Restaurant addRestaurant(String name) {
 
-        return null;
+        return new Restaurant(name);
     }
 
     public Restaurant getRestaurant(String name) {
