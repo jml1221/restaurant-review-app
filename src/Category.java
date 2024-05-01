@@ -6,7 +6,8 @@ public enum Category {
     ETHNIC("Ethnic"),
     CAFES("Cafés"),
     BAR_AND_GRILL("Bar and Grill"),
-    BUFFET("Buffet");
+    BUFFET("Buffet"),
+    OTHER("Other");
 
     private String description;
 

@@ -1,14 +1,24 @@
-public class Restaurant {
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+public class Restaurant implements Comparator<Restaurant> {
     private String name;
     private String address;
     private String phone;
     private String website;
-    private Category category;
     private int rating;
-    private ReviewList reviewList;
+    private Category category;
+    private List<Review> reviewList;
 
-    public Restaurant(String name) {
+    public Restaurant(String name, String address, String phone, String website, Category category) {
         this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.website = website;
+        this.rating = -1; // no rating initially
+        this.category = category; // ask user to choose number associated with category values and use "Category.values()[category - 1]"
+        this.reviewList = new ArrayList<Review>();
     }
 
     public String getName() {
@@ -35,7 +45,7 @@ public class Restaurant {
         return rating;
     }
 
-    public ReviewList getReviewList() {
+    public List<Review> getReviewList() {
         return reviewList;
     }
 
@@ -59,8 +69,30 @@ public class Restaurant {
         this.category = category;
     }
 
-    public boolean addReview (String content, int rating) {
-        return true;
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public boolean addReview (String content, int rating, String userName) {
+        if(rating >= 0 && rating <= 5) {
+            reviewList.add(new Review(content, rating, userName));
+
+            int totalRatings = 0;
+            for(Review review: reviewList) {
+                totalRatings += review.getRating();
+            }
+            setRating(Math.round(totalRatings / reviewList.size()));
+            return true;
+        }
+        return false;
+    }
+
+    public int compare(Restaurant a, Restaurant b) {
+        return b.getRating() - a.getRating();
+    }
+
+    public void printDetails() {
+        System.out.println("Name: " + name + " | Address: " + address + " | Phone: " + phone + " | Website: " + website + " | Rating: " + rating + " | Category: " + category.getDescription());
     }
 }
 

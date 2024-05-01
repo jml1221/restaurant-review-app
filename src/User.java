@@ -1,25 +1,33 @@
-import java.util.LinkedList;
+import java.util.List;
 
-public class User implements Person {
-    private int id;
+public class User {
     private String userName;
 
-    public User(int id, String userName) {
-        this.id = id;
+    public User(String userName) {
         this.userName = userName;
     }
-    /*
-    public RestaurantList getRestaurantListByName() {
-        return RestaurantList;
+
+    public String getUserName() {
+        return userName;
     }
 
-    public RestaurantList getRestaurantListByCategory() {
-        return RestaurantList;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+    
+    public void printPopularRestaurants(RestaurantList restaurantList) {
+        restaurantList.printPopularRestaurants();
     }
 
-    public List<Restaurant> searchRestaurants(String name) {
-        return RestaurantList.searchByName(name);
+    public List<Restaurant> getRestaurantsOfCategory(RestaurantList restaurantList, Category category) {
+        return restaurantList.getRestaurantsOfCategory(category);
     }
 
-     */
+    public Restaurant searchRestaurants(RestaurantList restaurantList, String name) {
+        return restaurantList.getRestaurant(name);
+    }
+
+    public boolean addReview(RestaurantList restaurantList, String name, String content, int rating) {
+        return restaurantList.getRestaurant(name).addReview(content, rating, userName);
+    }
 }

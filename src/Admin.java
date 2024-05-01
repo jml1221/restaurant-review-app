@@ -1,22 +1,17 @@
-public class Admin implements Person {
-
+public class Admin {
     public Admin() {
-
     }
 
-    public Restaurant addRestaurant(String name) {
-
-        return new Restaurant(name);
+    public boolean addRestaurant(RestaurantList restaurantList, String name, String address, String phone, String website, Category category) {
+        return restaurantList.addRestaurant(name, address, phone, website, category);
     }
 
-    public Restaurant getRestaurant(String name) {
-
-        return null;
+    public boolean editRestaurant(RestaurantList restaurantList, String oldName, String newName, String newAddress, String newPhone, String newWebsite, Category newCategory) {
+        return restaurantList.editRestaurant(oldName, newName, newAddress, newPhone, newWebsite, newCategory);
     }
 
-    public boolean deleteRestaurant(String name) {
-
-        return true;
+    public boolean deleteRestaurant(RestaurantList restaurantList, String name) {
+        return restaurantList.deleteRestaurant(restaurantList.getRestaurant(name));
     }
 }
 
