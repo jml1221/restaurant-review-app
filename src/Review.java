@@ -32,4 +32,9 @@ public class Review {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    public void printDetails() {
+        System.out.println(userName + ": " + rating + "/5");
+        System.out.println(content);
+    }
 }

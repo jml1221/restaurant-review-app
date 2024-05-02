@@ -13,5 +13,13 @@ public class Admin {
     public boolean deleteRestaurant(RestaurantList restaurantList, String name) {
         return restaurantList.deleteRestaurant(restaurantList.getRestaurant(name));
     }
+
+    public void printAllRestaurants(RestaurantList restaurantList) {
+        restaurantList.printAllRestaurants();
+    }
+
+    public Restaurant getRestaurant(RestaurantList restaurantList, String name) {
+        return restaurantList.getRestaurant(name);
+    }
 }
 

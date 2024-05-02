@@ -19,11 +19,11 @@ public class User {
         restaurantList.printPopularRestaurants();
     }
 
-    public List<Restaurant> getRestaurantsOfCategory(RestaurantList restaurantList, Category category) {
+    public RestaurantList getRestaurantsOfCategory(RestaurantList restaurantList, Category category) {
         return restaurantList.getRestaurantsOfCategory(category);
     }
 
-    public Restaurant searchRestaurants(RestaurantList restaurantList, String name) {
+    public Restaurant getRestaurant(RestaurantList restaurantList, String name) {
         return restaurantList.getRestaurant(name);
     }
 

@@ -17,7 +17,7 @@ public class Restaurant implements Comparator<Restaurant> {
         this.phone = phone;
         this.website = website;
         this.rating = -1; // no rating initially
-        this.category = category; // ask user to choose number associated with category values and use "Category.values()[category - 1]"
+        this.category = category;
         this.reviewList = new ArrayList<Review>();
     }
 
@@ -92,7 +92,19 @@ public class Restaurant implements Comparator<Restaurant> {
     }
 
     public void printDetails() {
-        System.out.println("Name: " + name + " | Address: " + address + " | Phone: " + phone + " | Website: " + website + " | Rating: " + rating + " | Category: " + category.getDescription());
+        System.out.print("Name: " + name + " | Address: " + address + " | Phone: " + phone + " | Website: " + website + " | Category: " + category.getDescription());
+        if(rating == -1) {
+            System.out.println(" | Rating: No rating yet");
+        } else {
+            System.out.println(" | Rating: " + rating);
+        }
+        System.out.println("Reviews:");
+        if(reviewList.size() == 0) {
+            System.out.println("No reviews yet");
+        }
+        for(Review review: reviewList) {
+            review.printDetails();
+        }
     }
 }
 

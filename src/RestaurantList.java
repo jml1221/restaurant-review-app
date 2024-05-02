@@ -52,6 +52,16 @@ public class RestaurantList {
         }
         return restaurants.remove(restaurant);
     } 
+    
+    public RestaurantList getRestaurantsOfCategory(Category category) {
+        RestaurantList restaurantsByCategory = new RestaurantList();
+        for(Restaurant restaurant: restaurants) {
+            if(restaurant.getCategory() == category) {
+                restaurantsByCategory.addRestaurant(restaurant.getName(), null, null, null, category);
+            }
+        }
+        return restaurantsByCategory;
+    }
 
     public void printPopularRestaurants() {
         restaurants.sort(null);
@@ -64,14 +74,11 @@ public class RestaurantList {
             }
         }
     }
-    
-    public List<Restaurant> getRestaurantsOfCategory(Category category) {
-        List<Restaurant> restaurantsByCategory = new ArrayList<Restaurant>();
+
+    public void printAllRestaurants() {
+        System.out.println("All restaurants:");
         for(Restaurant restaurant: restaurants) {
-            if(restaurant.getCategory() == category) {
-                restaurantsByCategory.add(restaurant);
-            }
+            System.out.println(restaurant.getName());
         }
-        return restaurantsByCategory;
     }
 }
