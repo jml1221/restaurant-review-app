@@ -78,26 +78,6 @@ public class AppSystem {
                                     System.out.println("There is no restaurant with the entered name");
                                 } else {
                                     restaurant.printDetails();
-                                    System.out.println("Choose one of the following options:");
-                                    System.out.println("(1) Add a review");
-                                    System.out.println("(2) Go back to User Main Window");
-                                    System.out.print("Enter your choice: ");
-                                    int reviewChoice = kb.nextInt();
-                                    kb.nextLine();
-                                    if(reviewChoice == 1) {
-                                        System.out.println("Add a Review");
-                                        System.out.println("===========================================================================");
-                                        System.out.print("Enter your review for the restaurant: ");
-                                        String comment = kb.nextLine();
-                                        System.out.print("Enter your rating (1-5) for the restaurant: ");
-                                        int rating = kb.nextInt();
-                                        kb.nextLine();
-                                        if(user.addReview(restaurantList, restaurantString, comment, rating)) {
-                                            System.out.println("Review added!");
-                                        } else {
-                                            System.out.println("Review was not added. Make sure your rating is 1-5.");
-                                        }
-                                    }
                                 }
                                 System.out.println("Press Enter to go back to the User Main Window");
                                 kb.nextLine();
