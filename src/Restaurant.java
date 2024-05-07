@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class Restaurant implements Comparator<Restaurant> {
+public class Restaurant implements Comparable<Restaurant> {
     private String name;
     private String address;
     private String phone;
@@ -87,8 +87,8 @@ public class Restaurant implements Comparator<Restaurant> {
         return false;
     }
 
-    public int compare(Restaurant a, Restaurant b) {
-        return b.getRating() - a.getRating();
+    @Override public int compareTo(Restaurant restaurant) {
+        return restaurant.getRating() - this.getRating();
     }
 
     public void printDetails() {

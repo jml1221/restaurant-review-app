@@ -69,7 +69,8 @@ public class RestaurantList {
         System.out.println("Most popular restaurants:");
         for(Restaurant restaurant: restaurants) {
             System.out.println(i + ": " + restaurant.getName());
-            if(i == 10) {
+            i++;
+            if(i == 11) {
                 break;
             }
         }
